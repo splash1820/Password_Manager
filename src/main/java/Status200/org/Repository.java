@@ -22,8 +22,8 @@ public class Repository {
     private void connect() {
         try {
             String url = "jdbc:REMOVEDql://localhost:5432/password_manager";
-            String user = "REMOVED";   // change to your username
-            String pass = "REMOVED";      // change to your password
+            String user = System.getenv("dbUser");   // change to your username
+            String pass = System.getenv("dbPassword");      // change to your password
             conn = DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
             e.printStackTrace();
